@@ -1,0 +1,14 @@
+.item {
+    display: inline-block;
+    width: 150px;
+    height: 150px;
+    line-height: 150px;
+    background-color: rgb(50, 50, 235);
+    color: #fff;
+    font-size: 30px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+    vertical-align: middle;
+    margin: 20px;
+    cursor: pointer;
+}
