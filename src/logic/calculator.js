@@ -29,4 +29,4 @@ function calculateRPN(RPNStr) {
     return stack.pop()
 }
 
-console.log(calculateRPN('55/2*1-'))
+export default calculateRPN

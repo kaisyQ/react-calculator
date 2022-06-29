@@ -1,6 +1,9 @@
 import React from "react"
 import { useState } from "react"
 
+import calculateRPN from "../../logic/calculator"
+import polishNotation from "../../logic/polish-notation"
+
 import styles from './Main.module.css'
 
 import Board from "../Board/Board"
@@ -13,7 +16,7 @@ function Main() {
     let [result, setResult] = useState(null)
 
     function equalityClick(inputValue) {
-        setResult(inputValue)
+        setResult(calculateRPN(polishNotation(inputValue)))
         setInputValue('')
     }
 
