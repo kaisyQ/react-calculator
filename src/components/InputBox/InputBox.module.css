@@ -1,0 +1,8 @@
+.outputBox {
+    display: block;
+    margin: 80px auto 0 auto;
+    max-width: 400px;
+    font-size: 40px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    outline:none;
+}

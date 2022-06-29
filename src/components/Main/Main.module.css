@@ -2,3 +2,8 @@
     width: 1200px;
     margin: 0 auto;
 }
+
+.flexBlock {
+    display: flex;
+    justify-content: space-between;
+}

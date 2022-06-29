@@ -1,13 +1,19 @@
 import React from "react"
 import styles from './BoardButton.module.css'
 
-function BoardButton({ value, setOutputValue, outputValue }) {
+const EQUALITY = '='
+
+function BoardButton({ value, setInputValue, equalityClick, inputValue }) {
     function handleClick(e) {
-        setOutputValue(outputValue + e.target.innerText)
+        if (e.target.innerText === EQUALITY) {
+            equalityClick(inputValue)
+        } else {
+            setInputValue(inputValue + e.target.innerText)
+        }
     }
 
     return <>
-        <div onClick={handleClick} className={styles.item} >{ value }</div>
+        <div onClick={handleClick} className={styles.item}>{ value }</div>
     </>
 }
 
