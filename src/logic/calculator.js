@@ -1,6 +1,5 @@
 function calculateRPN(RPNStr) {
     const stack = []
-
     for(let i = 0; i < RPNStr.length; ++i) {
         switch(RPNStr[i]) {
             case '+': {
@@ -21,7 +20,6 @@ function calculateRPN(RPNStr) {
             }
             default: {
                 stack.push(parseInt(RPNStr[i]))
-                console.log(stack)
                 break
             }
         }
