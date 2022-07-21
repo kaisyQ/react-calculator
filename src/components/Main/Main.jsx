@@ -17,13 +17,11 @@ function Main() {
 
     let [inputValue, setInputValue] = useState('')
     let [result, setResult] = useState(null)
-    const [logs, dispatch] = useReducer(logsReducer, {logs: []});
-
+    const [logsState, dispatch] = useReducer(logsReducer, {logs: []});
     function equalityClick(inputValue) {
         const result = calculateRPN(polishNotation(inputValue))
         setResult(result)
         dispatch(addLogAC(`${inputValue}=${result}`))
-        alert(`${inputValue}=${result}`)
         setInputValue('')
     }
 
@@ -31,7 +29,7 @@ function Main() {
         <InputBox dispatch={dispatch} setResult={setResult} result={result} equalityClick={equalityClick} inputValue={inputValue} setInputValue={setInputValue} />
         <div className={styles.flexBlock}>
             <Board inputValue={inputValue} equalityClick={equalityClick} setInputValue={setInputValue} />
-            <Logs logs={logs} dispatch={dispatch} />
+            <Logs logs={logsState.logs} dispatch={dispatch} />
         </div> 
     </div>
 }
