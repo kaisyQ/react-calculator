@@ -8,7 +8,7 @@ import styles from './Main.module.css'
 
 import Board from "../Board/Board"
 import InputBox from "../InputBox/InputBox"
-import OutputBox from "../OutputBox/OutputBox"
+import Logs from './../Logs/Logs'
 
 function Main() {
 
@@ -21,10 +21,10 @@ function Main() {
     }
 
     return <div className={styles.mainContainer}>
-        <InputBox inputValue={inputValue} setInputValue={setInputValue} />
+        <InputBox setResult={setResult} result={result} equalityClick={equalityClick} inputValue={inputValue} setInputValue={setInputValue} />
         <div className={styles.flexBlock}>
             <Board inputValue={inputValue} equalityClick={equalityClick} setInputValue={setInputValue} />
-            <OutputBox result={result}/>
+            <Logs />
         </div> 
     </div>
 }

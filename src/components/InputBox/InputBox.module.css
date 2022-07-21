@@ -1,7 +1,18 @@
-.outputBox {
-    display: block;
+.inptBoxContainer {
     margin: 80px auto 0 auto;
-    max-width: 400px;
+    max-width: 850px;
+    display: flex;
+    justify-content: space-between;
+}
+.Eqlt {
+    width: 60px;
+    font-size: 40px;
+    text-align: center;
+    background-color: blue;
+    color: #fff;
+    cursor: pointer;
+}
+.outputBox {
     font-size: 40px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     outline:none;
