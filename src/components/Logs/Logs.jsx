@@ -3,9 +3,13 @@ import styles from './Logs.module.css'
 
 import Log from './Log/Log'
 
-function Logs({arrOfLogs}) {
+function Logs({logs}) {
     return <div className={styles.logsContainer}>
-        {'here will be you logs' || arrOfLogs.map((log, index) => <Log id={index} log={log}/>)} 
+        {   logs ?  
+                <div>{logs.logs.map((log, index) => <Log key={index} log={log}/>)}</div> 
+                : 
+                <span>'here will be you logs'</span>
+        } 
     </div>
 }
 

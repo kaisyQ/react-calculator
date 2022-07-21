@@ -1,6 +1,6 @@
 import React from "react"
-
 import styles from './InputBox.module.css'
+
 function InputBox({ equalityClick, inputValue, setInputValue, result, setResult }) {
 
     function changeInptValue(e) {

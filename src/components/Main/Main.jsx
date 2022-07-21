@@ -1,8 +1,11 @@
 import React from "react"
-import { useState } from "react"
+import { useState, useReducer } from "react"
 
 import calculateRPN from "../../logic/calculator"
 import polishNotation from "../../logic/polish-notation"
+
+import logsReducer from "../../state/logs-reducer"
+import { addLogAC } from "../../state/logs-reducer"
 
 import styles from './Main.module.css'
 
@@ -14,17 +17,21 @@ function Main() {
 
     let [inputValue, setInputValue] = useState('')
     let [result, setResult] = useState(null)
+    const [logs, dispatch] = useReducer(logsReducer, {logs: []});
 
     function equalityClick(inputValue) {
-        setResult(calculateRPN(polishNotation(inputValue)))
+        const result = calculateRPN(polishNotation(inputValue))
+        setResult(result)
+        dispatch(addLogAC(`${inputValue}=${result}`))
+        alert(`${inputValue}=${result}`)
         setInputValue('')
     }
 
     return <div className={styles.mainContainer}>
-        <InputBox setResult={setResult} result={result} equalityClick={equalityClick} inputValue={inputValue} setInputValue={setInputValue} />
+        <InputBox dispatch={dispatch} setResult={setResult} result={result} equalityClick={equalityClick} inputValue={inputValue} setInputValue={setInputValue} />
         <div className={styles.flexBlock}>
             <Board inputValue={inputValue} equalityClick={equalityClick} setInputValue={setInputValue} />
-            <Logs />
+            <Logs logs={logs} dispatch={dispatch} />
         </div> 
     </div>
 }
